@@ -2,17 +2,17 @@ from django.shortcuts import render
 from django.contrib.auth.models import Group
 from allauth.account.views import SignupView
 from allauth.account.forms import SignupForm
-from .models import BrandManagerProfile
+from .models import CreatorProfile
 
 
-class BrandManagerSignupView(SignupView):
-    template_name = 'account/managers_signup.html'
+class CreatorSignupView(SignupView):
+    template_name = 'account/creators_signup.html'
     form_class = SignupForm
-    group = Group.objects.get(id=1)
+    group = Group.objects.get(id=2)
 
     def form_valid(self, form):
-        response = super(BrandManagerSignupView, self).form_valid(form)
+        response = super(CreatorSignupView, self).form_valid(form)
         user = self.user
         self.group.user_set.add(user)
-        BrandManagerProfile.objects.create(user=user)
+        CreatorProfile.objects.create(user=user)
         return response
