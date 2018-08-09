@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Campaigns</h1>
+{% for campaign in object_list %}
+<p>{{ campaign.name }}</p>
+<p>{{ campaign.submission_deadline }}</p>
+<p>{{ campaign.posted }}</p>
+<a href="{% url 'campaigns_detail' pk=campaign.id %}">View Campaign Details</a>
+{% empty %}
+No Campaigns yet
+{% endfor %}
+{% endblock content %}

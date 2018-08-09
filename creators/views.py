@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth.models import Group
 from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -6,6 +7,7 @@ from allauth.account.views import SignupView
 from allauth.account.forms import SignupForm
 from .models import CreatorProfile, SocialPlatform, Quote
 from .forms import SocialPlatformForm, QuoteForm
+from managers.models import Campaign
 
 
 class CreatorSignupView(SignupView):
@@ -22,28 +24,52 @@ class CreatorSignupView(SignupView):
 
 
 class CreatorUpdateView(UpdateView):
+    template_name = 'creators/creator_form.html'
     model = CreatorProfile
     fields = ['bio', 'niches', 'audience_demographic']
+    success_url = "/"
 
 
-class PlatformCreateView(FormView):
-    form_class = SocialPlatformForm
+def platform_create(request):
+    if request.method == 'POST':
+        form = SocialPlatformForm(request.POST)
+        if form.is_valid():
+            platform = form.save(commit=False)
+            platform.creator = request.user.creatorprofile
+            platform.save()
+            messages.success(request, 'Your social profile has been added')
+    else:
+        form = SocialPlatformForm()
+    return render(request, 'creators/creator_form.html', {'form': form})
 
 
 class PlatformUpdateView(UpdateView):
+    template_name = 'creators/creator_form.html'
     model = SocialPlatform
     fields = ['account_name', 'url', 'metrics']
     success_url = reverse_lazy('index')
 
 
 class PlatformDeleteView(DeleteView):
+    template_name = 'creators/creator_confirm_delete.html'
     model = SocialPlatform
     success_url = reverse_lazy('index')
 
 
-class QuoteCreateView(FormView):
-    template_name = 'creators/quote_form'
-    form_class = QuoteForm
+def quote_create(request, pk):
+    campaign = Campaign.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = QuoteForm(request.POST)
+        if form.is_valid():
+            quote = form.save(commit=False)
+            quote.creator = request.user.creatorprofile
+            quote.campaign = campaign
+            quote.save()
+            messages.success(request, 'Your quote has been submitted')
+            return redirect('')
+    else:
+        form = QuoteForm()
+    return render(request, 'creators/creator_form.html', {'form': form})
 
 
 class QuoteUpdateView(UpdateView):

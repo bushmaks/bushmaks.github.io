@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Campaigns</h1>
+<p>{{ campaign.name }}</p>
+<p>{{ campaign.goals }}</p>
+<p>{{ campaign.target_audience }}</p>
+<p>{{ campaign.detailed_description }}</p>
+<p>{{ campaign.budget }}</p>
+<p>{{ campaign.submission_deadline }}</p>
+<p>{{ campaign.posted }}</p>
+<a href="{% url  'quote_create' pk=campaign.id %}">Send a Quote</a>
+
+{% endblock content %}

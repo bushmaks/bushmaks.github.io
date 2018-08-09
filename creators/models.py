@@ -11,6 +11,9 @@ class CreatorProfile(models.Model):
     niches = models.ManyToManyField(Niche)
     audience_demographic = models.TextField()
 
+    def __str__(self):
+        return self.bio
+
 
 class SocialPlatform(models.Model):
     PLATFORMS = (
@@ -28,10 +31,15 @@ class SocialPlatform(models.Model):
     url = models.CharField(max_length=200)
     metrics = models.TextField()
 
+    def __str__(self):
+        return self.account_name
+
 
 class Quote(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    creator = models.ForeignKey(CreatorProfile, on_delete=models.CASCADE)
     campaign = models.ForeignKey(Campaign, on_delete=models.CASCADE)
     offering = models.TextField()
     price = models.PositiveIntegerField()
     created = models.DateTimeField(auto_now_add=True)
+    accepted = models.BooleanField(default=False)

@@ -1,1 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
 <h1> manager index </h1>
+<a href="{% url 'brand_create' %}">Add New Brand</a>
+{% for brand in brands %}
+<a href="{% url 'brand_detail' pk=brand.id%}">{{ brand.name }}</a>
+<p>{{ brand.info }}</p>
+<a href="{% url 'brand_update' pk=brand.id%}">edit this brand</a>
+<a href="{% url 'brand_delete' pk=brand.id%}">delete this brand</a>
+<a href="{% url 'campaign_create' pk=brand.id %}">Create Campaign for Brand</a>
+{% endfor %}
+{% endblock content %}

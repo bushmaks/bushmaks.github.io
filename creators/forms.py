@@ -3,10 +3,12 @@ from .models import SocialPlatform, CreatorProfile, Quote
 
 
 class SocialPlatformForm(forms.ModelForm):
-    model = SocialPlatform
-    fields = ['platform', 'account_name', 'url', 'metrics']
+    class Meta:
+        model = SocialPlatform
+        exclude = ['id', 'creator']
 
 
 class QuoteForm(forms.ModelForm):
-    model = Quote
-    fields = ['offering', 'price']
+    class Meta:
+        model = Quote
+        fields = ['offering', 'price']
