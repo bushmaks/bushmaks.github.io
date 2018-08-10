@@ -66,7 +66,7 @@ def quote_create(request, pk):
             quote.campaign = campaign
             quote.save()
             messages.success(request, 'Your quote has been submitted')
-            return redirect('')
+            return redirect('index')
     else:
         form = QuoteForm()
     return render(request, 'creators/creator_form.html', {'form': form})

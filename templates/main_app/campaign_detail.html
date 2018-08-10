@@ -1,14 +1,19 @@
-{% extends "base.html" %}
+{% extends "list_base.html" %}
 
-{% block content %}
-<h1>Campaigns</h1>
-<p>{{ campaign.name }}</p>
+{% block list %}
+<h2>Campaign: {{ campaign.name }}</h2>
+<h4>Brand: {{ campaign.brand.name }}</h4>
+<small class="text-muted">Posted on: {{ campaign.posted }}</small>
+
+<p>Goals:</p>
 <p>{{ campaign.goals }}</p>
+<p>Target Audience:</p>
 <p>{{ campaign.target_audience }}</p>
+<p>Detailed Description: </p>
 <p>{{ campaign.detailed_description }}</p>
-<p>{{ campaign.budget }}</p>
-<p>{{ campaign.submission_deadline }}</p>
-<p>{{ campaign.posted }}</p>
-<a href="{% url  'quote_create' pk=campaign.id %}">Send a Quote</a>
+<p>Budget: {{ campaign.budget }}</p>
+<p>Submission deadline: {{ campaign.submission_deadline }}</p>
 
-{% endblock content %}
+<a href="{% url  'quote_create' pk=campaign.id %}" class="btn btn-outline">Submit a Quote</a>
+
+{% endblock list %}

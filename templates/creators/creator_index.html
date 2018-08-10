@@ -1,16 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1> creator index </h1>
-<a href="{% url 'profile_edit' pk=request.user.id %}">edit profile</a>
-<a href="{% url 'platform_create' %}">add social platform</a>
-{% for platform in platforms %}
-<p>{{ platform.name }}</p>
-<p>{{ platform.platform }}</p>
-<p>{{ platform.account_name }}</p>
-<p>{{ platform.url }}</p>
-<p>{{ platform.metrics }}</p>
-<a href="{% url 'platform_update' pk=platform.id%}">edit this profile</a>
-<a href="{% url 'platform_delete' pk=platform.id%}">delete this profile</a>
-{% endfor %}
+<div class="row headline">
+
+    <div class="col-md-3">
+        <p>{{ user.first_name }} {{ user.last_name }}</p>
+        <p> {{ creator.bio }}</p>
+        <p>Niches:</p>
+        {% for niche in niches %}
+        <span class="">{{ niche.name }}</span>
+        {% endfor %}
+        <p>Demographic: {{ creator.audience_demographic }}</p>
+        <a href="{% url 'profile_edit' pk=request.user.id %}" class="btn btn-outline btn-wide">edit profile</a>
+    </div>
+
+    <div class="col-md-9">
+        <a href="{% url 'platform_create' %}" class="btn btn-fill btn-wide">add social platform</a>
+        {% for platform in platforms %}
+        <div class="card">
+            <span>Platform: {{ platform.platform }}</span>
+            <a href="{{ platform.url }}">Account name: {{ platform.account_name }}</a>
+            <p>Metrics: {{ platform.metrics }}</p>
+            <div class="card-footer">
+                <a href="{% url 'platform_update' pk=platform.id%}" class="btn btn-outline btn-sm">edit this platform</a>
+                <a href="{% url 'platform_delete' pk=platform.id%}" class="btn btn-outline btn-sm">delete this platform</a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+
 {% endblock content %}

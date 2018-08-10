@@ -1,13 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1> manager index </h1>
-<a href="{% url 'brand_create' %}">Add New Brand</a>
-{% for brand in brands %}
-<a href="{% url 'brand_detail' pk=brand.id%}">{{ brand.name }}</a>
-<p>{{ brand.info }}</p>
-<a href="{% url 'brand_update' pk=brand.id%}">edit this brand</a>
-<a href="{% url 'brand_delete' pk=brand.id%}">delete this brand</a>
-<a href="{% url 'campaign_create' pk=brand.id %}">Create Campaign for Brand</a>
-{% endfor %}
+<div class="row">
+
+    <div class="col-md-2">
+        <p>{{ user.first_name }} {{ user.last_name }}</p>
+
+
+    </div>
+
+    <div class="col-md-5">
+        <a href="{% url 'brand_create' %}" class="btn btn-fill btn-lg">Add New Brand</a>
+        {% for brand in brands %}
+        <a href="{% url 'brand_detail' pk=brand.id%}">{{ brand.name }}</a>
+        <p>{{ brand.info }}</p>
+        <a href="{% url 'brand_update' pk=brand.id%}">edit this brand</a>
+        <a href="{% url 'brand_delete' pk=brand.id%}">delete this brand</a>
+        <a href="{% url 'campaign_create' pk=brand.id %}">Create Campaign for Brand</a>
+        {% endfor %}
+
+    </div>
+     <div class="col-md-2">
+
+    </div>
+
+</div>
+
 {% endblock content %}

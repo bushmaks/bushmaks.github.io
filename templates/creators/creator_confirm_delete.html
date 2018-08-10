@@ -4,13 +4,14 @@
 {% block head_title %}Confirm Delete{% endblock %}
 
 {% block content %}
+<div class="row headline">
 <h1>Delete</h1>
 
 <form method="post">
     {% csrf_token %}
     <p>Are you sure you want to delete this {{ object.name }}?</p>
-    <input type="submit" value="Confirm">
+    <input type="submit" value="Confirm" class="btn btn-danger btn-lg">
 </form>
-
+</div>
 
 {% endblock %}

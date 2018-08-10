@@ -1,1 +1,19 @@
-<h1> visitor index </h1>
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<div class="row headline">
+
+    <div class="col-md-6 ">
+        <p class="headline-txt fill-txt">Digital marketing made easy</p>
+        <p class="text-muted"> Create an Account</p>
+        <a class="btn btn-fill btn-wide mb-2" href="{% url 'managers_signup' %}">Brands</a>
+        <a class="btn btn-outline btn-wide mb-2" href="{% url 'creators_signup' %}">Creators</a>
+    </div>
+    <div class="col-md-6 head-col">
+        <img src="{% static 'images/networklogos.png' %}" class="">
+    </div>
+</div>
+{% endblock content %}}
