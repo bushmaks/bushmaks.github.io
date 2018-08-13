@@ -16,12 +16,12 @@ class BrandManagerSignupView(SignupView):
     template_name = 'account/managers_signup.html'
     form_class = SignupForm
 
-    # group = Group.objects.get(id=1)
+    group = Group.objects.get(id=1)
 
     def form_valid(self, form):
         response = super(BrandManagerSignupView, self).form_valid(form)
         user = self.user
-        # self.group.user_set.add(user)
+        self.group.user_set.add(user)
         BrandManagerProfile.objects.create(user=user)
         return response
 
@@ -85,6 +85,23 @@ def brand_detail(request, pk):
     brand = Brand.objects.get(pk=pk)
     campaigns = Campaign.objects.filter(brand=brand)
     return render(request, 'managers/brand_detail.html', {"brand": brand, "campaigns": campaigns})
+
+
+def brand_campaigns(request, pk):
+    brand = Brand.objects.get(pk=pk)
+    campaigns = Campaign.objects.filter(brand=brand)
+    return render(request, 'managers/brand_campaigns.html', {"campaigns": campaigns})
+
+
+def campaign_quotes(request, pk):
+    campaign = Campaign.objects.get(pk=pk)
+    quotes = Quote.objects.filter(campaign=campaign)
+    return render(request, 'managers/campaign_quotes.html', {"quotes": quotes})
+
+
+def accept_quotes(request, pk):
+    quotes = Quote.objects.get(pk=pk)
+    return redirect('index')
 
 
 class QuotesListView(ListView):

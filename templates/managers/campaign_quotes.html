@@ -1,0 +1,17 @@
+{% extends "list_base.html" %}
+
+{% block list %}
+<h1> {{ brand.name }} </h1>
+<p> {{ brand.info }}</p>
+
+Quotes
+{% for quote in quotes %}
+<div class="card">
+<p>{{ quote.offering }}</p>
+<p>{{ quote.price }}</p>
+<a href="{% url 'accept_quotes' pk=quote.id%}" class="btn btn-outline btn-wide">Accept</a>
+</div>
+{% empty %}
+No Campaigns yet
+{% endfor %}
+{% endblock list %}
