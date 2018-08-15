@@ -13,12 +13,12 @@ from managers.models import Campaign
 class CreatorSignupView(SignupView):
     template_name = 'account/creators_signup.html'
     form_class = SignupForm
-    group = Group.objects.get(id=2)
+    # group = Group.objects.get(id=2)
 
     def form_valid(self, form):
         response = super(CreatorSignupView, self).form_valid(form)
         user = self.user
-        self.group.user_set.add(user)
+        # self.group.user_set.add(user)
         CreatorProfile.objects.create(user=user)
         return response
 
