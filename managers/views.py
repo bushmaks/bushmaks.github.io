@@ -16,12 +16,12 @@ class BrandManagerSignupView(SignupView):
     template_name = 'account/managers_signup.html'
     form_class = SignupForm
 
-    # group = Group.objects.get(id=1)
+    group = Group.objects.get(id=1)
 
     def form_valid(self, form):
         response = super(BrandManagerSignupView, self).form_valid(form)
         user = self.user
-        # self.group.user_set.add(user)
+        self.group.user_set.add(user)
         BrandManagerProfile.objects.create(user=user)
         return response
 
