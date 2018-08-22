@@ -1,0 +1,10 @@
+{% extends "list_base.html" %}
+
+{% load bootstrap4 %}
+
+{% block list %}
+<form method="post">{% csrf_token %}
+    {% bootstrap_form form %}
+    <input class="btn btn-fill btn-wide" type="submit" value="Submit">
+</form>
+{% endblock list %}

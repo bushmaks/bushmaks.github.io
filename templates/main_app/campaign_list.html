@@ -1,0 +1,17 @@
+{% extends "list_base.html" %}
+
+{% block list %}
+<h1>Campaigns</h1>
+{% for campaign in object_list %}
+<div class="card">
+    <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>
+    <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>
+    <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>
+    <small class="text-muted">posted on: {{ campaign.posted }}</small>
+    <a href="{% url 'campaigns_detail' pk=campaign.id %}" class="btn btn-fill">Campaign Details</a>
+</div>
+
+{% empty %}
+No Campaigns yet
+{% endfor %}
+{% endblock list %}

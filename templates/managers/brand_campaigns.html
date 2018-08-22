@@ -1,0 +1,15 @@
+{% extends "list_base.html" %}
+
+{% block list %}
+<h1> {{ brand.name }} </h1>
+<p> {{ brand.info }}</p>
+
+Campaigns
+{% for campaign in campaigns %}
+<div class="card">
+<a href="{% url 'campaign_quotes' pk=campaign.id%}">{{ campaign.name }}</a>
+</div>
+{% empty %}
+No Campaigns yet
+{% endfor %}
+{% endblock list %}
