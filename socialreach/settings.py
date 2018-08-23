@@ -31,7 +31,6 @@ MODE=config("MODE", default="dev")
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -50,7 +49,14 @@ INSTALLED_APPS = [
     'creators',
     'bootstrap4',
     'django_messages',
+    'mpesa_api.core',
+    'mpesa_api.util',
+    'rest_framework',
+    'mpesa',
 ]
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,6 +68,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
 
 ROOT_URLCONF = 'socialreach.urls'
 
