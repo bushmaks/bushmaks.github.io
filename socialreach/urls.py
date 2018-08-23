@@ -22,7 +22,7 @@ urlpatterns = [
     path('managers/', include('managers.urls')),
     path('creators/', include('creators.urls')),
     path('', include('main_app.urls')),
-    path('messages/', include('django_messages.urls')),
+    path('messages/', include('messages.urls')),
     path('mpesa/', include('mpesa.urls'))
     # path('mpesa/', include(('mpesa_api.core.urls', 'mpesa'), namespace='mpesa')),
 ]
