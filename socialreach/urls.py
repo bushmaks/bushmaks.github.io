@@ -22,4 +22,5 @@ urlpatterns = [
     path('managers/', include('managers.urls')),
     path('creators/', include('creators.urls')),
     path('', include('main_app.urls')),
+    path('ratings/', include('star_ratings.urls')),
 ]

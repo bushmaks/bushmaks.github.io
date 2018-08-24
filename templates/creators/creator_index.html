@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load ratings %}
 
 {% block content %}
 <div class="row headline">
@@ -19,6 +20,7 @@
         {% for platform in platforms %}
         <div class="card">
             <span>Platform: {{ platform.platform }}</span>
+            {% ratings object %}
             <a href="{{ platform.url }}">Account name: {{ platform.account_name }}</a>
             <p>Metrics: {{ platform.metrics }}</p>
             <div class="card-footer">
