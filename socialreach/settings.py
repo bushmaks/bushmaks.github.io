@@ -31,7 +31,6 @@ MODE=config("MODE", default="dev")
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,14 +42,20 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app',
     'managers',
     'creators',
     'bootstrap4',
-    'django_messages',
+    'messages',
+    'mpesa_api.core',
+    'mpesa_api.util',
+    'rest_framework',
+    'mpesa',
 ]
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,6 +68,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+
 ROOT_URLCONF = 'socialreach.urls'
 
 TEMPLATES = [
@@ -72,7 +78,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django_messages.context_processors.inbox',
+                'messages.context_processors.inbox',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
