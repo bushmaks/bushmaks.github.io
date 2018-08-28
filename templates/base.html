@@ -47,8 +47,8 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="{% url 'campaigns_list' %}">Campaigns</a></li>
             {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'influencer_view' %}">Creators Profile</a></li>
             <li class="nav-item"><a class="nav-link " href="{% url 'account_email' %}">Edit Account</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Log Out</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Log Out</a></li>
             {% else %}
             <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Log In</a></li>

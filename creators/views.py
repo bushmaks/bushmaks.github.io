@@ -80,3 +80,4 @@ class QuoteUpdateView(UpdateView):
 class QuoteDeleteView(DeleteView):
     model = Quote
     success_url = reverse_lazy('index')
+    
