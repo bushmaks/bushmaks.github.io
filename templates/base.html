@@ -4,6 +4,7 @@
 {% load static %}
 
 
+
 <html>
 
 <head>
@@ -18,6 +19,8 @@
     {% block styles %}
         {% bootstrap_css %}
         {% bootstrap_javascript jquery='full' %}
+        <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+        <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     {% endblock styles %}
