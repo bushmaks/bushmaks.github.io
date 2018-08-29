@@ -12,6 +12,7 @@
         <span class="">{{ niche.name }}</span>
         {% endfor %}
         <p>Demographic: {{ creator.audience_demographic }}</p>
+        {% ratings Profile %}
         <a href="{% url 'profile_edit' pk=request.user.id %}" class="btn btn-outline btn-wide">edit profile</a>
        
     </div>

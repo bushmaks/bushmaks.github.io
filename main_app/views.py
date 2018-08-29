@@ -22,7 +22,7 @@ def index(request):
             platforms = SocialPlatform.objects.filter(creator=creator)
             quotes = Quote.objects.filter(creator=creator)
             template = 'creators/creator_index.html'
-            context = {"user": user, "platforms": platforms, "creator": creator, "quotes": quotes, "niches": niches}
+            context = {"user": user, "platforms": platforms, "creator": creator, "quotes": quotes, "niches": niches, "Profile":creator }
 
     else:
         template = 'main_app/visitor_index.html'
@@ -56,5 +56,6 @@ class CampaignDetailView(detail.DetailView):
 def InfluencerView(request):
 
     influencers=CreatorProfile.user
+    creator = request.user.creatorprofile
     
-    return render(request, 'main_app/creatorprofile.html')
+    return render(request, 'main_app/creatorprofile.html', {"Profile":creator})
