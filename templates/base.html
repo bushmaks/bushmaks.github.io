@@ -35,18 +35,17 @@
 
 {% bootstrap_messages %}
 
-    <div class="content-row row">
-
+<div class="row">
     {% block content %}
     {% endblock content%}
+</div>
 
 
-    {% endblock body%}
+{% endblock body%}
 
 
-    {% block extra_body %}
-    {% endblock %}
-    </div>
+{% block extra_body %}
+{% endblock %}
 
 
 </body>
