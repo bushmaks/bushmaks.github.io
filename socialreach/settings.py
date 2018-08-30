@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'managers',
     'creators',
     'bootstrap4',
-    'star_ratings'
+    'star_ratings',
     'messages',
     'rest_framework',
 ]
