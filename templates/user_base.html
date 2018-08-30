@@ -1,11 +1,13 @@
-<nav class="navbar navbar-expand-md navbar-light">
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+<nav class="navbar-dark col-md-2">
     <a class="navbar-brand fill-txt" href="/">Social Reach</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNav" aria-controls="menuNav" aria-expanded="false">
-        <span class="btn btn-fill">&#8801; Menu</span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="menuNav">
+    <div id="menuNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'campaigns_list' %}">Campaigns</a>
@@ -26,3 +28,11 @@
     </div>
 
 </nav>
+
+{% block main%}
+<div class="col-md-10">
+
+</div>
+{% endblock main%}
+
+{% endblock content%}
