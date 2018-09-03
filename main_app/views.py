@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.utils import timezone
 from django.views.generic import list, detail
-from creators.models import SocialPlatform, Quote
+from creators.models import SocialPlatform, Quote, CreatorProfile
 from managers.models import Brand, Campaign
+
 
 
 def index(request):
@@ -21,7 +22,7 @@ def index(request):
             platforms = SocialPlatform.objects.filter(creator=creator)
             quotes = Quote.objects.filter(creator=creator)
             template = 'creators/creator_index.html'
-            context = {"user": user, "platforms": platforms, "creator": creator, "quotes": quotes, "niches": niches}
+            context = {"user": user, "platforms": platforms, "creator": creator, "quotes": quotes, "niches": niches, "Profile":creator }
 
     else:
         template = 'main_app/visitor_index.html'
