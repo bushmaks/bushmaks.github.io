@@ -5,7 +5,6 @@ from creators.models import SocialPlatform, Quote, CreatorProfile
 from managers.models import Brand, Campaign
 
 
-
 def index(request):
     user = request.user
     if request.user.is_authenticated:
@@ -53,9 +52,10 @@ class CampaignDetailView(detail.DetailView):
         context['now'] = timezone.now()
         return context
 
-def InfluencerView(request):
+
+def influencer_view(request):
 
     influencers=CreatorProfile.user
     creator = request.user.creatorprofile
     
-    return render(request, 'main_app/creatorprofile.html', {"Profile":creator})
+    return render(request, 'main_app/creatorprofile.html', {"Profile": creator})
