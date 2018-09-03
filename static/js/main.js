@@ -124,7 +124,6 @@
     responsive: true
   });
 
-  $('#loader').fadeOut();
 
 }(jQuery));
 
