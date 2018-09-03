@@ -1,19 +1,20 @@
 body{
-    background-color: #f6f6f6;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    color: #444444;
 }
-
-.fill-txt{
+.gradient-txt{
     color: white;
     background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .btn{
-    border-radius: 100px;
+    border-radius: 300px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 10px 10px 10px lightgray;
+    font-weight: bold;
     margin: 10px;
 }
 .btn-fill{
@@ -21,29 +22,78 @@ body{
     color: white;
 }
 .btn-outline{
+    background: #ffffff;
     color: #1FC8DB;
-    border: 3px solid #1FC8DB;
-}
-footer{
-    display: block;
-    padding: 10px;
-    color: #0FB8AD;
-    background-color: lightgray;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-.headline-txt{
-    font-size: 70px;
 }
 .btn-wide{
     padding-left: 50px;
     padding-right: 50px;
 }
-.form-col, .headline{
-    padding-top: 100px;
-    padding-left: 20px;
+
+/* ==========================================================================
+    VISITOR INDEX
+   ========================================================================== */
+header{
+    background: linear-gradient(141deg, #00ddab 0%, #1fc8db 51%, #1fc8db 75%);
     width: 100%;
+    height: 80vh;
+    color: #ffffff;
+    text-align: center;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+}
+.nav a{
+    color: #ffffff;
+    padding: 10px;
+}
+section, footer{
+    width: 100%;
+    padding: 30px 30px;
+}
+.navbar-brand, .navbar-toggler{
+    color: #ffffff;
+}
+.navbar-toggler{
+    border: 2px solid #ffffff;
+}
+#main-preview {
+    margin-top: -20%;
+}
+#main-preview img{
+    width: 80vw;
+    margin-left: 10vw;
+}
+#header-text{
+    margin-top: 50px;
+}
+#about img{
+    width: 20%;
+}
+#about .card{
+    width: 70vw;
+    margin-left: 15vw;
+}
+.section-header {
+  text-align: center;
+}
+
+/* Modal*/
+.modal-block{
+    width: 80vw;
+    background-color: #ffffff;
+    margin: 100px auto;
+}
+.modal-header{
+    color: #ffffff;
+    background: linear-gradient(141deg, #00ddab 0%, #1fc8db 51%, #1fc8db 75%);
+    text-align: center;
+}
+.modal-body{
+    margin: auto;
+}
+
+.form-col {
+    width:100%;
 }
 .form-col form{
     margin: 20px;
@@ -55,118 +105,19 @@ footer{
     background-color: #1fc8db;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
 }
-.content-row{
-    min-height: 100vh;
-    position: absolute;
-    width: 100%;
-    top: 0;
-}
-.card-footer .btn{
-    float: right;
-}
-.card{
-    margin: 30px;
-    padding: 10px;
-}
-h1 h2{
-    color: #0FB8AD;
-}
 .alert{
     z-index: 3;
 }
-.head-col{
-    overflow: hidden;
-}
 
-
-
-/* anderson frontend */
-
-/* ==========================================================================
-   1. IMPORT GOOGLE FONTS
-   ========================================================================== */
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
-/* ==========================================================================
-   2. GENERAL
-   ========================================================================== */
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  font-size: 14px;
-  font-weight: 400;
-  background: #fff;
-  overflow-x: hidden;
-  background: linear-gradient(110deg, #00ddab, #00dcd3);
-
--webkit-animation: AnimationName 30s ease infinite;
--moz-animation: AnimationName 30s ease infinite;
-animation: AnimationName 30s ease infinite;
-
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 75%}
-    50%{background-position:100% 26%}
-    100%{background-position:0% 75%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 75%}
-    50%{background-position:100% 26%}
-    100%{background-position:0% 75%}
-}
-@keyframes AnimationName {
-    0%{background-position:0% 75%}
-    50%{background-position:100% 26%}
-    100%{background-position:0% 75%}
-}
-}
-
-html {
-  overflow-x: hidden;
-}
 
 p {
   font-size: 14px;
   line-height: 26px;
 }
 
-
-
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-ul li {
-  list-style: none;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
-  outline: none;
-}
-
-a:not([href]):not([tabindex]) {
-  color: #fff;
-}
-
-a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
-  color: #61D2B4;
-}
-
-/* ==========================================================================
-   2.1 Section Title
-   ========================================================================== */
 .section {
   padding: 80px 0;
 }
-
-.section-header {
-  color: purple;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
 .section-header .section-title {
   font-size: 42px;
   margin-top: 0;
@@ -195,166 +146,39 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
   margin-top: 15px;
 }
 
+/* =====================================================
+     Footer
+   ===================================================== */
 
-/* ==========================================================================
-	 2.4  Pre Loader
-	 ========================================================================== */
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  z-index: 9999999999;
+footer{
+    text-align: center;
+    background-color: #efefef;
 }
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  top: 45%;
-  position: relative;
-  margin: 0px auto;
+footer hr{
+    width: 80%;
 }
-
-.double-bounce1, .double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: yellow;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%, 100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes sk-bounce {
-  0%, 100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-}
-
-/* ==========================================================================
-  -2.5 Scroll To Up
-   ========================================================================== */
-.back-to-top {
-  display: none;
-  position: fixed;
-  bottom: 18px;
-  right: 15px;
-}
-
-.back-to-top i {
-  display: block;
-  width: 36px;
-  height: 36px;
-  line-height: 36px;
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
-  border-radius: 4px;
-  background-color: purple;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-/* ==========================================================================
-15. Footer Style
- ========================================================================== */
-footer {
-  background: yellow;
-  padding: 20px 0;
-}
-
-.footer-links {
-  line-height: 48px;
-}
-
-.footer-links li {
-  float: left;
-}
-
-.footer-links li a {
-  color: #fff;
+footer a{
+  color: #999999;
   margin-right: 15px;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
 }
-
-.footer-links li a:hover {
+footer a:hover {
   color: #61D2B4;
 }
-
-.copyright {
-  margin-top: 10px;
-  float: right;
-}
-
-.copyright p {
-  color: #fff;
-}
-
-.copyright p a {
-  color: #fff;
-}
-
-.copyright p a:hover {
-  color: yellow;
-}
-
 .head{
   height: 800px;
   padding-top: 100px;
   -webkit-clip-path: polygon(0 1%, 100% 0%, 91% 86%, 0% 100%);
 clip-path: polygon(0 1%, 100% 0%, 91% 86%, 0% 100%);
-
 }
-
-
 #rad{
   border-radius: 100%;
   border-style: solid;
   border-color: red;
   border-width: thin;
-
-
-    }
-
-
-/* login */
-h3{
-  font-family: 'Montserrat', sans-serif;
-text-align: center;
-letter-spacing: 2px;
-font-size: 36px;
-color: white;
 }
-
-
 #cen{
   background-color: white;
   color: black;
@@ -364,27 +188,4 @@ color: white;
 
 }
 
-.ui{
-  padding-top: 30px;
-  padding-left:20px;
-  text-align: center;
 
-}
-
-#about{
-  text-align: center;
-  background-color: white;
-  height: 800px;
-}
-
-
-#ig{
-
-}
-.u{
-  font-size: 13px;
-  color: black;
-  text-align:center;
-}
-
-/* hover */
