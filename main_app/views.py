@@ -54,7 +54,9 @@ class CampaignDetailView(detail.DetailView):
         return context
 
 
+def InfluencerView(request):
 
-# calc
+    influencers=CreatorProfile.user
+    creator = request.user.creatorprofile
 
-        def calc()
+    return render(request, 'main_app/creatorprofile.html', {"Profile":creator})
