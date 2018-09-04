@@ -29,6 +29,9 @@ body{
     padding-left: 50px;
     padding-right: 50px;
 }
+.content-block{
+    min-height: 100vh;
+}
 
 /* ==========================================================================
     VISITOR INDEX
@@ -90,6 +93,20 @@ section, footer{
 }
 .modal-body{
     margin: auto;
+}
+
+/* ==========================================================================
+    CREATOR INDEX
+   ========================================================================== */
+
+.side-nav{
+    background: linear-gradient(141deg, #00ddab 0%, #1fc8db 51%, #1fc8db 75%);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.side-nav a{
+    color: #ffffff;
 }
 
 .form-col {
