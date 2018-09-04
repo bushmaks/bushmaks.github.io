@@ -52,7 +52,7 @@ class CampaignDetailView(detail.DetailView):
         context['now'] = timezone.now()
         return context
 
-
+      
 def influencer_view(request):
 
     influencers=CreatorProfile.user
