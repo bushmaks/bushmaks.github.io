@@ -1,38 +1,56 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load static %}
+
 
 {% block content %}
+    <!-- TOP NAVIGATION -->
+    <nav class="navbar top-nav">
+        <a class="d-flex justify-content-between" href="/">
+            <img src="{% static 'images/sm-logo.svg' %}">
+        </a>
+        <div class="d-flex justify-content-between">
+            <a class="gradient-txt brand" href="/">Social Manager</a>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a class="nav-item nav-link" href="{% url 'account_logout' %}"
+               data-toggle="tooltip" data-placement="right" title="Logout">
+                <i class="fa fa-sign-out fa-2x gradient-txt"></i>
+            </a>
+        </div>
+    </nav>
 
-<nav class="navbar-dark col-md-2">
-    <a class="navbar-brand fill-txt" href="/">Social Reach</a>
 
-    <div id="menuNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'campaigns_list' %}">Campaigns</a>
-            </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link " href="{% url 'account_email' %}">Edit Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
-            </li>
-            {% endif %}
-        </ul>
-    </div>
+    <div class="row">
 
-</nav>
+        <div class="col-md-1">
 
-{% block main%}
-<div class="col-md-10">
+            <!-- SIDE NAVIGATION -->
+            <nav class="side-nav">
 
-</div>
-{% endblock main%}
+                <a class="nav-item nav-link " href="{% url 'profile_edit' pk=request.user.id %}"
+                   data-toggle="tooltip" data-placement="right" title="Profile">
+                    <i class="fa fa-user fa-3x"></i>
+                </a>
+                <a class="nav-item nav-link" href="{% url 'campaigns_list' %}"
+                   data-toggle="tooltip" data-placement="right" title="Campaigns">
+                    <i class="fa fa-bullhorn fa-3x"></i>
+                </a>
 
-{% endblock content%}
+                <a class="nav-item nav-link" href="{% url 'messages_inbox' %}"
+                   data-toggle="tooltip" data-placement="right" title="Messages">
+                    <i class="fa fa-envelope fa-3x"></i>
+                </a>
+
+            </nav>
+        </div>
+
+        <div class="col-md-11">
+
+            <!-- MAIN CONTENT -->
+            {% block main %}
+            {% endblock main %}
+        </div>
+
+{% endblock content %}

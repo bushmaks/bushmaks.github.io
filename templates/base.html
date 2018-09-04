@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 {% load bootstrap4 %}
+{% load fontawesome %}
 {% load static %}
 
 
@@ -15,14 +16,18 @@
 
     <title>{% block head_title %}{% endblock %}</title>
 
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+
     <!-- STYLESHEETS -->
     {% block styles %}
         {% bootstrap_css %}
+        {% fontawesome_stylesheet %}
         {% bootstrap_javascript jquery='full' %}
         <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
         <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
     {% endblock styles %}
 
 
@@ -31,15 +36,16 @@
 </head>
 
 <body>
+
+
 {% block body %}
 
-{% bootstrap_messages %}
+    {% bootstrap_messages %}
 
-<div class="row">
-    {% block content %}
-    {% endblock content%}
-</div>
-
+    <div class="content-block">
+        {% block content %}
+        {% endblock content%}
+    </div>
 
 {% endblock body%}
 
