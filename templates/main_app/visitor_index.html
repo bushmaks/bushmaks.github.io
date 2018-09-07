@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
+{% load i18n %}
 
 {% block content %}
 
@@ -40,17 +40,25 @@
             <h4 class="card-header">Offers from brands</h4>
         </div>
         <div id="list" class="card-body">
-            <div id="item">
-                <div id="item-header" class="d-flex w-100 justify-content-between card-title">
-                    <h3 class="mb-1">Title of a offer</h3>
-                    <small>Time</small>
+            {% for campaign in campaigns %}
+                <div id="item">
+                    <div id="item-header" class="d-flex w-100 justify-content-between card-title">
+                        <h3 class="mb-1">{{ campaign.name }}</h3>
+                        <small class="date">{{ campaign.posted }}</small>
+                    </div>
+                    <div id="item-content" class="card-text">
+                        <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>
+                        <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>
+                        <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>
+                        <p class="mb-1">{{ campaign.detailed_description }}</p>
+                        <a href="{% url 'campaigns_detail' pk=campaign.id %}" class="btn btn-fill">Campaign Details</a>
+                    </div>
                 </div>
-                <div id="item-content" class="card-text">
-                    <p class="mb-1">Description of a offer</p>
-                </div>
-            </div>
-
+            {% empty %}
+                No Campaigns yet
+            {% endfor %}
         </div>
+        <a href="{% url 'campaigns_list' %}" class="btn btn-outline">Show more...</a>
     </section>
 
 

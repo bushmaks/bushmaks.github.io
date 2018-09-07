@@ -25,7 +25,8 @@ def index(request):
 
     else:
         template = 'main_app/visitor_index.html'
-        context = {"user": user}
+        campaigns = Campaign.objects.filter(posted__lte=timezone.now()).order_by('posted')[:5]
+        context = {"user": user, "campaigns": campaigns}
 
     return render(request, template, context)
 
@@ -33,7 +34,7 @@ def index(request):
 class CampaignListView(list.ListView):
     template_name = 'main_app/campaign_list.html'
     model = Campaign
-    paginate_by = 5
+    paginate_by = 10
     title = 'Campaigns'
 
     def get_context_data(self, **kwargs):
