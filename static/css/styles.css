@@ -59,10 +59,8 @@ section, footer{
 }
 #main-preview {
     margin-top: -20%;
-}
-#main-preview img{
-    width: 80vw;
-    margin-left: 10vw;
+    margin-right: auto;
+    margin-left: auto;
 }
 #header-text{
     margin-top: 50px;

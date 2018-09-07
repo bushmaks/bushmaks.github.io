@@ -20,6 +20,8 @@
                     <a href="" class="nav-item nav-link small">About</a>
                     <a href="" class="nav-item nav-link small">Pricing</a>
                     <a href="" class="nav-item nav-link small">Testimonials</a>
+{#                    btn btn-outline#}
+                    <a href="#signupModal" class="nav-item nav-link small text-uppercase" data-toggle="modal">Create Account</a>
                     <a href="{% url 'account_login' %}" class="nav-item nav-link small text-uppercase">Login</a>
                 </div>
             </div>
@@ -29,15 +31,26 @@
         <div id="header-text">
             <h1>Social Manager</h1>
             <p>Digital Marketing Made Easier </p>
-            <button class="btn btn-outline" data-toggle="modal" data-target="#signupModal">Create Account</button>
         </div>
 
     </header>
 
+    <section id="main-preview" class="card w-75 center-block">
+        <div id="header">
+            <h4 class="card-header">Offers from brands</h4>
+        </div>
+        <div id="list" class="card-body">
+            <div id="item">
+                <div id="item-header" class="d-flex w-100 justify-content-between card-title">
+                    <h3 class="mb-1">Title of a offer</h3>
+                    <small>Time</small>
+                </div>
+                <div id="item-content" class="card-text">
+                    <p class="mb-1">Description of a offer</p>
+                </div>
+            </div>
 
-    <!-- DESKTOP PREVIEW -->
-    <section id="main-preview">
-        <img src="http://pngimg.com/uploads/macbook/macbook_PNG47.png" alt="">
+        </div>
     </section>
 
 
@@ -117,15 +130,20 @@
 
 
   <!-- SIGNUP MODAL -->
-    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
          aria-hidden="true">
-        <div class="modal-block">
-            <div class="modal-header">
-                <h3 class="text-center text-uppercase">Type of Account</h3>
-            </div>
-            <div class="modal-body">
-                <a href="{% url 'creators_signup' %}" class="btn btn-wide btn-fill">Creator</a>
-                <a href="{% url 'managers_signup' %}" class="btn btn-wide btn-fill">Brand Manager</a>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-center text-uppercase">Type of Account</h3>
+                    <button type="button" class="btn btn-outline" data-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body">
+                        <div class="col-md-12 text-center">
+                            <a href="{% url 'creators_signup' %}" class="btn btn-wide btn-fill btn-group">Creator</a>
+                            <a href="{% url 'managers_signup' %}" class="btn btn-wide btn-fill btn-group">Brand Manager</a>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
