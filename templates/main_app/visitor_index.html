@@ -35,9 +35,9 @@
 
     </header>
 
-    <section id="main-preview" class="card w-75 center-block">
-        <div id="header">
-            <h4 class="card-header">Offers from brands</h4>
+    <div id="main-preview" class="card w-75 center-block">
+        <div class="card-header">
+            <h4>Offers from brands</h4>
         </div>
         <div id="list" class="card-body">
             {% for campaign in campaigns %}
@@ -59,7 +59,7 @@
             {% endfor %}
         </div>
         <a href="{% url 'campaigns_list' %}" class="btn btn-outline">Show more...</a>
-    </section>
+    </div>
 
 
      <!-- ABOUT SECTION-->
