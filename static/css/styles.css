@@ -96,31 +96,38 @@ section, footer{
     PRICING TEMPLATE
    ========================================================================== */
 
+.card-header {
+    background-color: transparent!important;
+}
+
 #pricingCards{
-    display: block;
-    width: 100%;
-    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
 }
-#pricingCards > div:first-child {
-    float: left;
+#pricingCards > div.card {
+    /*list-style: none;*/
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  color: white;
+  background: #2fc8d9;
+  position: relative;
+  width: 250px; /* width of each table */
+  margin-right: 40px; /* spacing between tables */
+  margin-bottom: 1em;
+    margin-top: 20px;
+  transition: all .5s;
 }
-#pricingCards > div:last-child {
-    float: right;
-}
-#pricingCards div {
-    margin-right: auto;
-    margin-left: auto;
-}
-#pricingCards div.card {
-    position: relative;
-}
-#pricingCards > div {
-    width: 20%;
-}
-#pricingCards div.card > a {
-    display: block;
-    position: absolute;
-    top: 120%;
+#pricingCards > div.card:hover {
+    transform: scale(1.05);
+    transition: all .5s;
+    z-index: 100;
+    box-shadow: 0 0 10px gray;
 }
 
 /* ==========================================================================
