@@ -97,26 +97,30 @@ section, footer{
    ========================================================================== */
 
 #pricingCards{
+    display: block;
+    width: 100%;
     margin: 20px;
 }
-#pricingCards #firstCard {
-    margin-right: -20%!important;
+#pricingCards > div:first-child {
+    float: left;
 }
-#pricingCards #thirdCard {
-    margin-left: -20%!important;
+#pricingCards > div:last-child {
+    float: right;
 }
 #pricingCards div {
     margin-right: auto;
     margin-left: auto;
 }
-#pricingCreateCampaign {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+#pricingCards div.card {
+    position: relative;
 }
-#pricingCreateCampaign a {
-    margin-left: 3vw;
-    margin-right: 3vw;
+#pricingCards > div {
+    width: 20%;
+}
+#pricingCards div.card > a {
+    display: block;
+    position: absolute;
+    top: 120%;
 }
 
 /* ==========================================================================
