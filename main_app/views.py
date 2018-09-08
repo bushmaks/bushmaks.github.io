@@ -9,7 +9,7 @@ def index(request):
     user = request.user
     if request.user.is_authenticated:
 
-        if user.groups.filter(id=1).exists():
+        if user.groups.filter(name="BrandManager").exists():
             manager = request.user.brandmanagerprofile
             template = 'managers/manager_index.html'
             brands = manager.brand_set.all()
@@ -28,6 +28,12 @@ def index(request):
         campaigns = Campaign.objects.filter(posted__lte=timezone.now()).order_by('posted')[:5]
         context = {"user": user, "campaigns": campaigns}
 
+    return render(request, template, context)
+
+def pricing(request):
+    user = request.user
+    template = 'main_app/pricing.html'
+    context = {"user": user}
     return render(request, template, context)
 
 

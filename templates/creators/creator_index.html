@@ -1,6 +1,7 @@
 {% extends "user_base.html" %}
 
 {% block main %}
+    <a href="{% url 'account_logout' %}" class="btn btn-wide btn-fill">EXIT FROM ACCOUNT</a>
 
 
     <p>{{ user.first_name }} {{ user.last_name }}</p>

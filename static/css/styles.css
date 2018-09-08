@@ -59,6 +59,7 @@ section, footer{
 }
 #main-preview {
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -70,7 +71,8 @@ section, footer{
 }
 #about .card{
     width: 70vw;
-    margin-left: 15vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 .section-header {
   text-align: center;
@@ -89,6 +91,32 @@ section, footer{
 }
 .modal-body{
     margin: auto;
+}
+/* ==========================================================================
+    PRICING TEMPLATE
+   ========================================================================== */
+
+#pricingCards{
+    margin: 20px;
+}
+#pricingCards #firstCard {
+    margin-right: -20%!important;
+}
+#pricingCards #thirdCard {
+    margin-left: -20%!important;
+}
+#pricingCards div {
+    margin-right: auto;
+    margin-left: auto;
+}
+#pricingCreateCampaign {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+#pricingCreateCampaign a {
+    margin-left: 3vw;
+    margin-right: 3vw;
 }
 
 /* ==========================================================================

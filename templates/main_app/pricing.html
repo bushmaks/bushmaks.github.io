@@ -1,0 +1,29 @@
+{% extends 'main_app/base.html' %}
+
+{% block base_content %}
+    <div id="pricingCards" class="row text-center">
+        <div id="firstCard" class="card">
+            <h5 class="card-header">SMALL BUSINESS</h5>
+            <div class="card-body">
+                <h1 class="display-4">FREE</h1>
+            </div>
+        </div>
+        <div id="secondCard" class="card">
+            <h5 class="card-header">BRAND MANAGER</h5>
+            <div class="card-body">
+                <h1 class="display-4">FREE</h1>
+            </div>
+        </div>
+        <div id="thirdCard" class="card">
+            <h5 class="card-header">AGENCY</h5>
+            <div class="card-body">
+                <h1 class="display-4">FREE</h1>
+            </div>
+        </div>
+    </div>
+    <div id="pricingCreateCampaign">
+        <a href="{% url 'managers_signup' %}" class="btn btn-fill">Create a campaign</a>
+        <a href="{% url 'managers_signup' %}" class="btn btn-fill">Create a campaign</a>
+        <a href="{% url 'managers_signup' %}" class="btn btn-fill">Create a campaign</a>
+    </div>
+{% endblock base_content %}

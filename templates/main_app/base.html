@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+    <!-- HEADER -->
+    <header>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md visitor-nav">
+            <a class="navbar-brand" href="/">Social Manager</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                Menu &#8801;
+            </button>
+
+            <div class="navbar-collapse collapse" id="collapsingNavbar">
+                <div class="navbar-nav ml-auto">
+                    <a href="" class="nav-item nav-link small">About</a>
+                    <a href="{% url 'pricing' %}" class="nav-item nav-link small">Pricing</a>
+                    <a href="" class="nav-item nav-link small">Testimonials</a>
+{#                    btn btn-outline#}
+                    <a href="#signupModal" class="nav-item nav-link small text-uppercase" data-toggle="modal">Create Account</a>
+                    <a href="{% url 'account_login' %}" class="nav-item nav-link small text-uppercase">Login</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header Text -->
+        <div id="header-text">
+            <h1>Social Manager</h1>
+            <p>Digital Marketing Made Easier </p>
+        </div>
+
+    </header>
+
+    {% block base_content %}{% endblock %}
+
+  <!-- SIGNUP MODAL -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-center text-uppercase">Type of Account</h3>
+                    <button type="button" class="btn btn-outline" data-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body">
+                        <div class="col-md-12 text-center">
+                            <a href="{% url 'creators_signup' %}" class="btn btn-wide btn-fill btn-group">Creator</a>
+                            <a href="{% url 'managers_signup' %}" class="btn btn-wide btn-fill btn-group">Brand Manager</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav>
+            <a href="" class="nav-item">FAQ</a>
+            <a href="" class="nav-item">Privacy Policy</a>
+            <a href="" class="nav-item">Terms & Conditions</a>
+        </nav>
+        <hr>
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+
+    <p> 2018 Social Manager All Rights Reserved </p>
+    </footer>
+
+
+
+    <script src="{% static  'js/jquery-min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}

@@ -1,68 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'main_app/base.html' %}
 
-{% load static %}
-{% load i18n %}
+{% block base_content %}
 
-{% block content %}
-
-    <!-- HEADER -->
-    <header>
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-md visitor-nav">
-            <a class="navbar-brand" href="/">Social Manager</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                Menu &#8801;
-            </button>
-
-            <div class="navbar-collapse collapse" id="collapsingNavbar">
-                <div class="navbar-nav ml-auto">
-                    <a href="" class="nav-item nav-link small">About</a>
-                    <a href="" class="nav-item nav-link small">Pricing</a>
-                    <a href="" class="nav-item nav-link small">Testimonials</a>
-{#                    btn btn-outline#}
-                    <a href="#signupModal" class="nav-item nav-link small text-uppercase" data-toggle="modal">Create Account</a>
-                    <a href="{% url 'account_login' %}" class="nav-item nav-link small text-uppercase">Login</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Header Text -->
-        <div id="header-text">
-            <h1>Social Manager</h1>
-            <p>Digital Marketing Made Easier </p>
-        </div>
-
-    </header>
-
-    <div id="main-preview" class="card w-75 center-block">
-        <div class="card-header">
-            <h4>Offers from brands</h4>
-        </div>
-        <div id="list" class="card-body">
-            {% for campaign in campaigns %}
-                <div id="item">
-                    <div id="item-header" class="d-flex w-100 justify-content-between card-title">
-                        <h3 class="mb-1">{{ campaign.name }}</h3>
-                        <small class="date">{{ campaign.posted }}</small>
-                    </div>
-                    <div id="item-content" class="card-text">
-                        <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>
-                        <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>
-                        <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>
-                        <p class="mb-1">{{ campaign.detailed_description }}</p>
-                        <a href="{% url 'campaigns_detail' pk=campaign.id %}" class="btn btn-fill">Campaign Details</a>
-                    </div>
-                </div>
-            {% empty %}
-                No Campaigns yet
-            {% endfor %}
-        </div>
-        <a href="{% url 'campaigns_list' %}" class="btn btn-outline">Show more...</a>
-    </div>
-
-
-     <!-- ABOUT SECTION-->
+    <!-- ABOUT SECTION-->
     <section id="about">
 
         <div class="section-header">
@@ -136,49 +76,36 @@
 
     </section>
 
-
-  <!-- SIGNUP MODAL -->
-    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="text-center text-uppercase">Type of Account</h3>
-                    <button type="button" class="btn btn-outline" data-dismiss="modal">X</button>
-                </div>
-                <div class="modal-body">
-                        <div class="col-md-12 text-center">
-                            <a href="{% url 'creators_signup' %}" class="btn btn-wide btn-fill btn-group">Creator</a>
-                            <a href="{% url 'managers_signup' %}" class="btn btn-wide btn-fill btn-group">Brand Manager</a>
-                        </div>
-                </div>
-            </div>
+    <!-- Campaign list -->
+    <div id="main-preview" class="card w-75 center-block">
+        <div class="card-header">
+            <h4>Offers from brands</h4>
         </div>
+        <div id="list" class="card-body">
+            {% for campaign in campaigns %}
+                <div id="item">
+                    <div id="item-header" class="d-flex w-100 justify-content-between card-title">
+                        <h3 class="mb-1">{{ campaign.name }}</h3>
+                        <small class="date">{{ campaign.posted }}</small>
+                    </div>
+                    <div id="item-content" class="card-text">
+                        <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>
+                        <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>
+                        <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>
+                        <p class="mb-1">{{ campaign.detailed_description }}</p>
+                        <a href="{% url 'campaigns_detail' pk=campaign.id %}" class="btn btn-fill">Campaign Details</a>
+                    </div>
+                </div>
+            {% empty %}
+                No Campaigns yet
+            {% endfor %}
+        </div>
+        <a href="{% url 'campaigns_list' %}" class="btn btn-outline">Show more...</a>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <nav>
-            <a href="" class="nav-item">FAQ</a>
-            <a href="" class="nav-item">Privacy Policy</a>
-            <a href="" class="nav-item">Terms & Conditions</a>
-        </nav>
-        <hr>
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-linkedin"></i>
 
-    <p> 2018 Social Manager All Rights Reserved </p>
-    </footer>
+    <div class="center-block text-center">
+        <a href="{% url 'managers_signup' %}" class="btn btn-fill btn-wide">Create a new campaign</a>
+    </div>
 
-
-
-    <script src="{% static  'js/jquery-min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-    <script src="{% static 'js/wow.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-
-
-{% endblock content %}}
+{% endblock base_content %}
