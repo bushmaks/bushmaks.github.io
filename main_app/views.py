@@ -15,13 +15,17 @@ def index(request):
             brands = manager.brand_set.all()
             context = {"user": user, "brands": brands}
 
-        else:
+        elif user.groups.filter(name="Creator"):
             creator = request.user.creatorprofile
             niches = creator.niches.all()
             platforms = SocialPlatform.objects.filter(creator=creator)
             quotes = Quote.objects.filter(creator=creator)
             template = 'creators/creator_index.html'
             context = {"user": user, "platforms": platforms, "creator": creator, "quotes": quotes, "niches": niches, "Profile":creator }
+        else:
+            template = 'main_app/visitor_index.html'
+            campaigns = Campaign.objects.filter(posted__lte=timezone.now()).order_by('posted')[:5]
+            context = {"user": user, "campaigns": campaigns}
 
     else:
         template = 'main_app/visitor_index.html'
