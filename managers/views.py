@@ -34,7 +34,7 @@ def brand_create(request):
             brand.save()
             brand.managers.add(request.user.brandmanagerprofile)
             messages.success(request, 'Your brand has been added')
-            return redirect('index')
+            return redirect('campaign_create')
     else:
         form = BrandForm()
     return render(request, 'managers/manager_form.html', {'form': form})

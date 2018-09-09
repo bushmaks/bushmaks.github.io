@@ -2,6 +2,7 @@
 
 {% block list %}
 <h2>Campaign: {{ campaign.name }}</h2>
+<img class="rounded float-right" alt="{{ campaign.name }}" src="{{ campaign.image.url }}">
 <h4>Brand: {{ campaign.brand.name }}</h4>
 <small class="text-muted">Posted on: {{ campaign.posted }}</small>
 

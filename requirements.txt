@@ -16,6 +16,7 @@ django-braces==1.13.0
 django-heroku==0.3.1
 django-messages==0.5.3
 django-model-utils==3.1.2
+django-photologue
 django-redis==4.9.0
 django-rest-framework==0.1.0
 django-star-ratings==0.6.1
@@ -43,3 +44,4 @@ vine==1.1.4
 whitenoise==3.3.1
 fontawesome
 gunicorn
+pillow

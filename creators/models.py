@@ -12,7 +12,7 @@ class CreatorProfile(models.Model):
     audience_demographic = models.TextField()
 
     def __str__(self):
-        return self.bio
+        return self.user
 
 class SocialPlatform(models.Model):
     PLATFORMS = (
@@ -42,3 +42,6 @@ class Quote(models.Model):
     price = models.PositiveIntegerField()
     created = models.DateTimeField(auto_now_add=True)
     accepted = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.offering

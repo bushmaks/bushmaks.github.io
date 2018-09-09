@@ -1,5 +1,7 @@
 {% extends 'main_app/base.html' %}
 
+{% load static %}
+
 {% block base_content %}
 
     <!-- ABOUT SECTION-->
@@ -89,6 +91,7 @@
                         <small class="date">{{ campaign.posted }}</small>
                     </div>
                     <div id="item-content" class="card-text">
+                        <img class="rounded float-right" alt="{{ campaign.name }}" src="{{ campaign.image.url }}">
                         <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>
                         <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>
                         <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>

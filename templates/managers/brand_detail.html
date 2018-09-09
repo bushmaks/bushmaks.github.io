@@ -7,6 +7,7 @@
 Campaigns
 {% for campaign in campaigns %}
 <p>{{ campaign.name }}</p>
+<p><img class="rounded float-right" alt="{{ campaign.name }}" src="{{ campaign.image.url }}"></p>
 <p>{{ campaign.goals }}</p>
 <p>{{ campaign.target_audience }}</p>
 <p>{{ campaign.detailed_description }}</p>
