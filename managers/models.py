@@ -7,25 +7,31 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from main_app.models import Niche
-from django.db.models.signals import post_save, pre_save
-from django.dispatch import receiver
-
-_UNSAVED_FILEFIELD = 'unsaved_filefield'
+from datetime import datetime
 
 def upload_path_handler(instance, filename):
-    return "user_images/campaings_images/{id}/{filename}".format(filename=filename, id=instance.id)
+    if instance.__class__.__name__ == "Campaign":
+        return "user_images/brand_images/{id}/campaign_images/{filename}".format(filename=filename + str(datetime.now().time()), id=instance.brand.id)
+    elif instance.__class__.__name__ == "Brand":
+        return  "user_images/brand_images/{id}/{filename}".format(filename=filename, id=instance.id)
+    elif instance.__class__.__name__ == "BrandManagerProfile":
+        return "user_images/user_profile_images/{id}/{filename}".format(filename=filename + str(datetime.now().time()), id=instance.user.id)
+    else:
+        return "user_images/not_sorted/{id}/{filename}".format(filename=filename, id=instance.id)
 
 class BrandManagerProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    image = models.ImageField(upload_to=upload_path_handler, blank=True, null=True)
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 
 class Brand(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
     managers = models.ManyToManyField(BrandManagerProfile)
+    image = models.ImageField(upload_to=upload_path_handler, blank=True, null=True)
     info = models.TextField()
 
     def __str__(self):

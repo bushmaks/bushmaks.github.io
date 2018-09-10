@@ -1,0 +1,116 @@
+ {% block posts %}
+{#            <div id="main-preview" class="card w-75 center-block">#}
+{#        <div class="card-header">#}
+{#            <h4>Offers from brands</h4>#}
+{#        </div>#}
+{#        <div id="list" class="card-body">#}
+{#            {% for campaign in campaigns %}#}
+{#                <div id="item">#}
+{#                    <div id="item-header" class="d-flex w-100 justify-content-between card-title">#}
+{#                        <h3 class="mb-1">{{ campaign.name }}</h3>#}
+{#                        <small class="date">{{ campaign.posted }}</small>#}
+{#                    </div>#}
+{#                    <div id="item-content" class="card-text">#}
+{#                        <img class="rounded float-right" alt="{{ campaign.name }}" src="{{ campaign.image.url }}">#}
+{#                        <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>#}
+{#                        <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>#}
+{#                        <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>#}
+{#                        <p class="mb-1">{{ campaign.detailed_description }}</p>#}
+{#                        <a href="{% url 'campaigns_detail' pk=campaign.id %}" class="btn btn-fill">Campaign Details</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% empty %}#}
+{#                No Campaigns yet#}
+{#            {% endfor %}#}
+{#        </div>#}
+{#        <a href="{% url 'campaigns_list' %}" class="btn btn-outline">Show more...</a>#}
+{#    </div>#}
+{% for campaign in campaigns %}
+    {% if campaign.image %}
+<div class="blog-container">
+  <div class="blog-header">
+    <div class="blog-cover" style="
+            background: url({{ campaign.image.url }}) no-repeat center;
+            background-size: cover;
+            border-radius: 5px 5px 0 0;
+            height: 15rem;
+            box-shadow: inset hsla(0, 0%, 0%, 0.2) 0 64px 64px 16px;">
+      <div class="blog-author">
+          {% if campaign.brand.image %}
+            <img src="{{ campaign.brand.image.url }}" alt="{{ brand.name }}">
+          {% else %}
+            <div></div>
+        {% endif %}
+        <h3>{{ campaign.brand.name }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-body">
+    <div class="blog-title">
+      <h1><a href="{% url 'campaigns_detail' pk=campaign.id %}">{{ campaign.name }}</a></h1>
+    </div>
+    <div class="blog-summary">
+      <p>{{ campaign.goals }}</p>
+    </div>
+{#    <div class="blog-tags">#}
+{#      <ul>#}
+{#        <li><a href="#">css</a></li>#}
+{#        <li><a href="#">web design</a></li>#}
+{#        <li><a href="#">codepen</a></li>#}
+{#        <li><a href="https://twitter.com/russbeye">twitter</a></li>#}
+{#      </ul>#}
+{#    </div>#}
+  </div>
+
+  <div class="blog-footer">
+    <ul>
+      <li class="published-date">{{ campaign.posted }}</li>
+{#      <li class="comments">Submission deadline: <span class="numero">{{ campaign.submission_deadline }}</span></li>#}
+{#      <li class="shares">Budget: <span class="numero">{{ campaign.budget }}</span></li>#}
+    </ul>
+  </div>
+</div>
+    {% else %}
+    <div class="blog-container">
+
+  <div class="blog-header">
+    <div class="blog-author--no-cover">
+        {% if campaign.brand.image %}
+            <img src="{{ campaign.brand.image.url }}" alt="{{ brand.name }}">
+        {% else %}
+            <div></div>
+        {% endif %}
+        <h3>{{ campaign.brand.name }}</h3>
+    </div>
+  </div>
+
+  <div class="blog-body">
+    <div class="blog-title">
+      <h1><a href="{% url 'campaigns_detail' pk=campaign.id %}">{{ campaign.name }}</a></h1>
+    </div>
+    <div class="blog-summary">
+      <p>{{ campaign.goals }}</p>
+    </div>
+{#    <div class="blog-tags">#}
+{#      <ul>#}
+{#        <li><a href="#">design</a></li>#}
+{#        <li><a href="#">web dev</a></li>#}
+{#        <li><a href="#">css</a></li>#}
+{#      </ul>#}
+{#    </div>#}
+  </div>
+
+  <div class="blog-footer">
+    <ul>
+      <li class="published-date">{{ campaign.posted }}</li>
+{#      <li class="comments"><a href="#"><svg class="icon-bubble"><use xlink:href="#icon-bubble"></use></svg><span class="numero">8</span></a></li>#}
+{#      <li class="shares"><a href="#"><svg class="icon-star"><use xlink:href="#icon-star"></use></svg><span class="numero">3</span></a></li>#}
+    </ul>
+  </div>
+
+</div>
+{% endif %}
+{% endfor %}
+{% endblock posts %}
+

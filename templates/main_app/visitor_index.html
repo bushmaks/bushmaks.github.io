@@ -79,32 +79,9 @@
     </section>
 
     <!-- Campaign list -->
-    <div id="main-preview" class="card w-75 center-block">
-        <div class="card-header">
-            <h4>Offers from brands</h4>
-        </div>
-        <div id="list" class="card-body">
-            {% for campaign in campaigns %}
-                <div id="item">
-                    <div id="item-header" class="d-flex w-100 justify-content-between card-title">
-                        <h3 class="mb-1">{{ campaign.name }}</h3>
-                        <small class="date">{{ campaign.posted }}</small>
-                    </div>
-                    <div id="item-content" class="card-text">
-                        <img class="rounded float-right" alt="{{ campaign.name }}" src="{{ campaign.image.url }}">
-                        <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>
-                        <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>
-                        <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>
-                        <p class="mb-1">{{ campaign.detailed_description }}</p>
-                        <a href="{% url 'campaigns_detail' pk=campaign.id %}" class="btn btn-fill">Campaign Details</a>
-                    </div>
-                </div>
-            {% empty %}
-                No Campaigns yet
-            {% endfor %}
-        </div>
-        <a href="{% url 'campaigns_list' %}" class="btn btn-outline">Show more...</a>
-    </div>
+    {% include "main_app/posts.html" %}
+    {% block posts %}
+    {% endblock posts %}
 
 
     <div class="center-block text-center">

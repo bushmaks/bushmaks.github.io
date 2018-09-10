@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'star_ratings',
     'messages',
     'rest_framework',
+    'static_precompiler',
 ]
 
 
@@ -185,6 +186,8 @@ STATICFILES_DIRS = [
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+STATIC_PRECOMPILER_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_PRECOMPILER_OUTPUT_DIR = 'static'
 
 # Email configurations
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')

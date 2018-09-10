@@ -45,3 +45,4 @@ whitenoise==3.3.1
 fontawesome
 gunicorn
 pillow
+django-static-precompiler
