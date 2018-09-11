@@ -46,4 +46,4 @@ fontawesome
 gunicorn
 pillow
 django-static-precompiler
-sass_on_heroku
+hassle
