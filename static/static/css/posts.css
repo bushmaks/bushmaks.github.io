@@ -1,0 +1,169 @@
+/* =====================================================
+     Posts
+   ===================================================== */
+.post-container {
+  background: linear-gradient(141deg, #00ddab 0%, #1fc8db 51%, #1fc8db 75%);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
+  font-family: "adelle-sans", sans-serif;
+  font-weight: 100;
+  margin: 48px auto;
+  width: 20rem; }
+  @media screen and (min-width: 480px) {
+    .post-container {
+      width: 25rem; } }
+  @media screen and (min-width: 767px) {
+    .post-container {
+      width: 45rem; } }
+  @media screen and (min-width: 959px) {
+    .post-container {
+      width: 60rem; } }
+
+.post-container a {
+  color: #4d4dff;
+  text-decoration: none;
+  transition: .25s ease; }
+  .post-container a:hover {
+    border-color: #ff4d4d;
+    color: #ff4d4d; }
+
+/* =====================================================
+     Posts header
+   ===================================================== */
+.post-cover {
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+  height: 15rem;
+  box-shadow: inset rgba(0, 0, 0, 0.2) 0 64px 64px 16px; }
+
+.post-author,
+.post-author--no-cover {
+  margin: 0 auto;
+  padding-top: .125rem;
+  width: 80%; }
+
+.post-author img,
+.post-author--no-cover img {
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 8px;
+  width: 32px; }
+
+.post-author div,
+.post-author--no-cover div {
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: .5rem;
+  position: relative;
+  top: 8px;
+  width: 32px; }
+
+.post-author h3 {
+  color: #fff;
+  font-weight: 100; }
+
+.post-author--no-cover h3 {
+  color: white;
+  font-weight: 100; }
+
+/* =====================================================
+     Post body
+   ===================================================== */
+.post-body {
+  margin: 0 auto;
+  width: 80%; }
+
+.video-body {
+  height: 100%;
+  width: 100%; }
+
+.post-title h1 a {
+  color: #fff;
+  font-weight: 100; }
+
+.post-details p {
+  color: white; }
+
+.post-tags ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0; }
+
+.post-tags li + li {
+  margin-left: .5rem; }
+
+.post-tags a {
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  font-size: .75rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  padding: 0 .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 5rem; }
+
+/* =====================================================
+     Post footer
+   ===================================================== */
+.post-footer {
+  border-top: 1px solid white;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: .125rem;
+  width: 80%; }
+
+.post-footer ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-left: 0; }
+
+.post-footer li:first-child {
+  margin-right: auto; }
+
+.post-footer li + li {
+  margin-left: .5rem; }
+
+.post-footer li {
+  color: white;
+  font-size: .75rem;
+  height: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  white-space: nowrap; }
+  .post-footer li a {
+    color: white; }
+
+.more-details {
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 0 .5rem; }
+  .more-details:hover {
+    color: white; }
+
+.published-date {
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 0 .5rem; }
+
+/* =====================================================
+     Post icon
+   ===================================================== */
