@@ -27,15 +27,15 @@
 {#    </div>#}
 {% for campaign in campaigns %}
     {% if campaign.image %}
-<div class="blog-container">
-  <div class="blog-header">
-    <div class="blog-cover" style="
+<div class="post-container">
+  <div class="post-header">
+    <div class="post-cover" style="
             background: url({{ campaign.image.url }}) no-repeat center;
             background-size: cover;
             border-radius: 5px 5px 0 0;
             height: 15rem;
             box-shadow: inset hsla(0, 0%, 0%, 0.2) 0 64px 64px 16px;">
-      <div class="blog-author">
+      <div class="post-author">
           {% if campaign.brand.image %}
             <img src="{{ campaign.brand.image.url }}" alt="{{ brand.name }}">
           {% else %}
@@ -46,11 +46,11 @@
     </div>
   </div>
 
-  <div class="blog-body">
-    <div class="blog-title">
+  <div class="post-body">
+    <div class="post-title">
       <h1><a href="{% url 'campaigns_detail' pk=campaign.id %}">{{ campaign.name }}</a></h1>
     </div>
-    <div class="blog-summary">
+    <div class="post-details">
       <p>{{ campaign.goals }}</p>
     </div>
 {#    <div class="blog-tags">#}
@@ -63,19 +63,18 @@
 {#    </div>#}
   </div>
 
-  <div class="blog-footer">
+  <div class="post-footer">
     <ul>
-      <li class="published-date">{{ campaign.posted }}</li>
-{#      <li class="comments">Submission deadline: <span class="numero">{{ campaign.submission_deadline }}</span></li>#}
+      <li class="published-date">{{ campaign.posted|date:'Y-m-d' }}</li>
+      <li class="more-details"><a href="{% url 'campaigns_detail' pk=campaign.id %}"><span>More details</span></a></li>
 {#      <li class="shares">Budget: <span class="numero">{{ campaign.budget }}</span></li>#}
     </ul>
   </div>
 </div>
     {% else %}
-    <div class="blog-container">
-
-  <div class="blog-header">
-    <div class="blog-author--no-cover">
+    <div class="post-container">
+  <div class="post-header">
+    <div class="post-author--no-cover">
         {% if campaign.brand.image %}
             <img src="{{ campaign.brand.image.url }}" alt="{{ brand.name }}">
         {% else %}
@@ -85,11 +84,11 @@
     </div>
   </div>
 
-  <div class="blog-body">
-    <div class="blog-title">
+  <div class="post-body">
+    <div class="post-title">
       <h1><a href="{% url 'campaigns_detail' pk=campaign.id %}">{{ campaign.name }}</a></h1>
     </div>
-    <div class="blog-summary">
+    <div class="post-details">
       <p>{{ campaign.goals }}</p>
     </div>
 {#    <div class="blog-tags">#}
@@ -101,10 +100,10 @@
 {#    </div>#}
   </div>
 
-  <div class="blog-footer">
+  <div class="post-footer">
     <ul>
-      <li class="published-date">{{ campaign.posted }}</li>
-{#      <li class="comments"><a href="#"><svg class="icon-bubble"><use xlink:href="#icon-bubble"></use></svg><span class="numero">8</span></a></li>#}
+      <li class="published-date">{{ campaign.posted|date:'Y-m-d' }}</li>
+      <li class="more-details"><a href="{% url 'campaigns_detail' pk=campaign.id %}"><span>More details</span></a></li>
 {#      <li class="shares"><a href="#"><svg class="icon-star"><use xlink:href="#icon-star"></use></svg><span class="numero">3</span></a></li>#}
     </ul>
   </div>
