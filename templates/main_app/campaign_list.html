@@ -3,18 +3,81 @@
 {% block main %}
 <h1>Campaigns</h1>
 {% for campaign in object_list %}
-<div class="card">
-    <span><span class="text-muted">Brand:</span> <b>{{ campaign.brand.name }}</b></span>
-    <span><span class="text-muted">Campaign Name:</span><b>{{ campaign.name }}</b></span>
     {% if campaign.image %}
-    <span><img class="rounded float-right" alt="{{ campaign.name }}" src="{{ campaign.image.url }}"></span>
-    {% endif %}
-    <p><span class="text-muted">Submission Deadline:</span>{{ campaign.submission_deadline }}</p>
-    <small class="text-muted">posted on: {{ campaign.posted }}</small>
-    <a href="{% url 'campaigns_detail' pk=campaign.id %}" class="btn btn-fill">Campaign Details</a>
-</div>
+    <div class="post-container">
+      <div class="post-header">
+        <div class="post-cover" style="
+                background: url({{ campaign.image.url }}) no-repeat center;
+                background-size: cover;
+                border-radius: 5px 5px 0 0;
+                height: 15rem;
+                box-shadow: inset hsla(0, 0%, 0%, 0.2) 0 64px 64px 16px;">
+          <div class="post-author">
+              {% if campaign.brand.image %}
+                <img src="{{ campaign.brand.image.url }}" alt="{{ brand.name }}">
+              {% else %}
+                <div></div>
+            {% endif %}
+            <h3>{{ campaign.brand.name }}</h3>
+          </div>
+        </div>
+      </div>
 
-{% empty %}
-No Campaigns yet
+      <div class="post-body">
+        <div class="post-title">
+          <h1><a href="{% url 'campaigns_detail' pk=campaign.id %}">{{ campaign.name }}</a></h1>
+        </div>
+        <div class="post-details">
+          <p>{{ campaign.detailed_description }}</p>
+        </div>
+    {#    <div class="blog-tags">#}
+    {#      <ul>#}
+    {#        <li><a href="#">css</a></li>#}
+    {#        <li><a href="#">web design</a></li>#}
+    {#        <li><a href="#">codepen</a></li>#}
+    {#        <li><a href="https://twitter.com/russbeye">twitter</a></li>#}
+    {#      </ul>#}
+    {#    </div>#}
+      </div>
+
+      <div class="post-footer">
+        <ul>
+          <li class="published-date">{{ campaign.posted|date:'Y-m-d' }}</li>
+          <li class="more-details"><a href="{% url 'campaigns_detail' pk=campaign.id %}"><span>More details</span></a></li>
+    {#      <li class="shares">Budget: <span class="numero">{{ campaign.budget }}</span></li>#}
+        </ul>
+      </div>
+    </div>
+        {% else %}
+        <div class="post-container">
+      <div class="post-header">
+        <div class="post-author--no-cover">
+            {% if campaign.brand.image %}
+                <img src="{{ campaign.brand.image.url }}" alt="{{ brand.name }}">
+            {% else %}
+                <div></div>
+            {% endif %}
+            <h3>{{ campaign.brand.name }}</h3>
+        </div>
+      </div>
+
+      <div class="post-body">
+        <div class="post-title">
+          <h1><a href="{% url 'campaigns_detail' pk=campaign.id %}">{{ campaign.name }}</a></h1>
+        </div>
+        <div class="post-details">
+          <p>{{ campaign.detailed_description }}</p>
+        </div>
+      </div>
+
+      <div class="post-footer">
+        <ul>
+          <li class="published-date">{{ campaign.posted|date:'Y-m-d' }}</li>
+          <li class="more-details"><a href="{% url 'campaigns_detail' pk=campaign.id %}"><span>More details</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+{% endif %}
 {% endfor %}
 {% endblock main %}

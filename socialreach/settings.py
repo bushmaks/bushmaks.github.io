@@ -30,7 +30,7 @@ DEBUG = config('DEBUG')
 MODE=config("MODE", default="dev")
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = [".herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = [".herokuapp.com", "127.0.0.1", "0.0.0.0"]
 
 # Application definition
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.instagram',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -156,7 +157,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 
-ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_REQUIRED = True
 
 ACCOUNT_EMAIL_VERIFICATION = 'optional'
 
