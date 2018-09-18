@@ -6,7 +6,9 @@
 {% block content %}
 
     <!-- HEADER -->
-    <header>
+    <header style="background: url({% static 'images/header_image.png' %}) no-repeat center;
+            background-size: cover;
+            ">
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-md visitor-nav">
@@ -20,7 +22,6 @@
                     <a href="" class="nav-item nav-link small">About</a>
                     <a href="{% url 'pricing' %}" class="nav-item nav-link small">Pricing</a>
                     <a href="" class="nav-item nav-link small">Testimonials</a>
-{#                    btn btn-outline#}
                     <a href="#signupModal" class="nav-item nav-link small text-uppercase" data-toggle="modal">Create Account</a>
                     <a href="{% url 'account_login' %}" class="nav-item nav-link small text-uppercase">Login</a>
                 </div>
@@ -29,8 +30,7 @@
 
         <!-- Header Text -->
         <div id="header-text">
-            <h1>Social Manager</h1>
-            <p>Digital Marketing Made Easier </p>
+            <h1>Unlocking The World’s Creativity </h1>
         </div>
 
     </header>
