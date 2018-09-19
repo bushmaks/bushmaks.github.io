@@ -208,12 +208,15 @@ section, footer{
 
 .sidebar-navigation {
     display: inline-block;
+    position: relative;
+    left: 50px;
     width: 150px;
     height: auto;
     margin: 50px;
+    margin-left: 0;
     padding: 10px;
     background: white;
-    color: rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 .sidebar-navigation .active {
@@ -245,8 +248,10 @@ section, footer{
 .support_content {
     margin: 20px;
     display: inline-block;
-    position: relative;
-    top: 0;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 80%;
 }
 
 /* ==========================================================================
@@ -258,15 +263,83 @@ section, footer{
     height: auto;
     color: white;
     text-align: center;
-    margin: 20px;
+    margin-bottom: 50px;
 }
 .statistic-box {
     display: inline-block;
-    background: rgb(32, 106, 122);
-    border-radius: 20%;
-    margin: 20px;
+    background: rgb(32, 144, 157);
+    border-radius: 20px;
+    height: 130px;
+    width: 30%;
+    margin-right: 20px;
+    position: relative;
+    padding: 30px;
+}
+.statistic-box div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.statistic-box .statistic-text {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    font-size: small;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.numbers {
+    font-size: xx-large;
+    font-weight: lighter;
+}
+
+.profile {
+    max-width: 100%;
     height: 100px;
-    width: 25%;
+    background: white;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 40px;
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+.profile .name {
+    font-size: xx-large;
+    font-weight: 800;
+    color: black;
+    display: block;
+}
+.profile .buttons {
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+}
+
+.social-statistics {
+    width: auto;
+    height: auto;
+    color: black;
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.social-box {
+    display: inline-flex;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    height: 250px;
+    width: 30%;
+    margin-right: 20px;
+    position: relative;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.social-box .statistic-text {
+    position: absolute;
+    top: 70%;
 }
 
 

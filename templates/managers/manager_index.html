@@ -51,22 +51,40 @@
         {# Support content #}
         <div class="support_content">
             <div class="statistics-boxes">
-                <div class="statistic-box">Total followers</div>
-                <div class="statistic-box">Engagement ratio</div>
-                <div class="statistic-box">Total content watch hours</div>
+                <div class="statistic-box">
+                    <div class="numbers">100000</div>
+                    <span class="statistic-text">Total followers</span>
+                </div>
+                <div class="statistic-box">
+                    <div class="numbers">90%</div>
+                    <span class="statistic-text">Engagement ratio</span>
+                </div>
+                <div class="statistic-box">
+                    <div class="numbers">5.6</div>
+                    <span class="statistic-text">Total content watch hours</span>
+                </div>
             </div>
             <div class="profile">
-                <div class="name"><img src=""></div>
+                <div class="name">{{ user.first_name }} {{ user.last_name }}</div>
                 <div class="buttons">
                     <button class="btn btn-fill btn-wide">Save profile</button>
                     <button class="btn btn-fill btn-wide">Contact details</button>
-                    <button class="btn btn-fill btn-wide">More...</button>
+                    <button class="btn btn-outline"><i class="fa fa-ellipsis-v"></i></button>
                 </div>
             </div>
             <div class="social-statistics">
-                <div class="social-box">YouTube</div>
-                <div class="social-box">Instagram</div>
-                <div class="social-box">Facebook</div>
+                <div class="social-box">
+                    <div class="numbers">100000</div>
+                    <span class="statistic-text">YouTube</span>
+                </div>
+                <div class="social-box">
+                    <div class="numbers">1000</div>
+                    <span class="statistic-text">Instagram</span>
+                </div>
+                <div class="social-box">
+                    <div class="numbers">12345</div>
+                    <span class="statistic-text">Facebook</span>
+                </div>
             </div>
             <div class="more-statistics"></div>
         </div>
