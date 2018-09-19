@@ -30,7 +30,7 @@ DEBUG = config('DEBUG')
 MODE=config("MODE", default="dev")
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = [".herokuapp.com", "127.0.0.1", "0.0.0.0"]
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0"]
 
 # Application definition
 
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'messages',
     'rest_framework',
     'static_precompiler',
+    'imagekit',
 ]
 
 
@@ -177,6 +178,8 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+FONTAWESOME_PREFIX = 'fa'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 

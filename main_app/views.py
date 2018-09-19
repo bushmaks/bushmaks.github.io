@@ -13,7 +13,7 @@ def index(request):
             manager = request.user.brandmanagerprofile
             template = 'managers/manager_index.html'
             brands = manager.brand_set.all()
-            context = {"user": user, "brands": brands}
+            context = {"user": user, "brands": brands, "manager": manager}
 
         elif user.groups.filter(name="Creator"):
             creator = request.user.creatorprofile

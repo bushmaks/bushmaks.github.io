@@ -34,13 +34,13 @@ body{
 /* ==========================================================================
     VISITOR INDEX
    ========================================================================== */
-header{
+#header-visitor {
     width: 100%;
     height: auto;
     color: #ffffff;
     text-align: center;
 }
-.navbar {
+#navbar-vistior {
     background: rgba(0, 0, 0, 0.4);
     width: 100%;
 }
@@ -86,10 +86,13 @@ section, footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.section-header h1 {
+
+.header-title {
+    text-align: center;
     font-size: 2rem;
     color: #0e90d2;
 }
+
 .section-header p {
     text-transform: uppercase;
     font-family: 'Rubik', Arial;
@@ -151,6 +154,122 @@ section, footer{
     z-index: 100;
     box-shadow: 0 0 10px gray;
 }
+/* ==========================================================================
+    MANAGER DASHBOARD
+   ========================================================================== */
+#background-color {
+    background-color: rgba(47,200,217,1);
+    position: absolute;
+    top: 0;
+    height: 60%;
+    width: 100%;
+    z-index: -1;
+}
+
+#header-manager a {
+    font-weight: bold;
+    color: rgba(255,255,255,0.5);
+}
+.navbar-brand {
+    color: rgba(255,255,255,1) !important;
+    font-size: x-large;
+}
+
+#header-manager .active a {
+    color: rgba(255,255,255,1);
+}
+
+
+#search-manager {
+    border: none;
+
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(255,255,255,1);
+}
+
+#notification_bell i {
+    float: right;
+    color: rgba(255,255,255,1);
+    font-size: x-large;
+}
+.user_thumbnail {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-left: 10px;
+    font-size: xx-large;
+}
+
+.sidebar-navigation {
+    display: inline-block;
+    width: 150px;
+    height: auto;
+    margin: 50px;
+    padding: 10px;
+    background: white;
+    color: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.sidebar-navigation .active {
+    color: white;
+    background: rgba(47,200,217,1);
+}
+.sidebar-option {
+    background: white;
+    border-radius: 20%;
+    margin: auto;
+    margin-top: 10px;
+    width: 110px;
+    height: 110px;
+    text-align: center;
+    padding-top: 25px;
+}
+.sidebar-navigation div:first-child {
+    margin-top: 5px;
+}
+.sidebar-option:hover{
+    color: white;
+    background: rgba(47,200,217,1);
+}
+.sidebar-option i {
+    display: block;
+    font-size: 2rem;
+}
+
+.support_content {
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+    top: 0;
+}
+
+/* ==========================================================================
+    MANAGER_STATISTICS
+   ========================================================================== */
+
+.statistics-boxes {
+    width: auto;
+    height: auto;
+    color: white;
+    text-align: center;
+    margin: 20px;
+}
+.statistic-box {
+    display: inline-block;
+    background: rgb(32, 106, 122);
+    border-radius: 20%;
+    margin: 20px;
+    height: 100px;
+    width: 25%;
+}
+
+
 
 /* ==========================================================================
     USER BASE TEMPLATE

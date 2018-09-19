@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 {% load bootstrap4 %}
-{#{% load fontawesome %}#}
+{% load fontawesome %}
 {% load static %}
 {% load compile_static %}
 
@@ -23,13 +23,13 @@
     <!-- STYLESHEETS -->
     {% block styles %}
         {% bootstrap_css %}
-{#        {% fontawesome_stylesheet %}#}
+        {% fontawesome_stylesheet %}
         {% bootstrap_javascript jquery='full' %}
         <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
         <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
         <link rel="stylesheet" href="{% static "css/posts.scss"|compile %}" />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Rubik:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
     {% endblock styles %}
 
 

@@ -1,34 +1,74 @@
-{% extends "base.html" %}
+{% extends "managers/base.html" %}
+{% load fontawesome %}
 
-{% block content %}
-<div class="row headline">
-
-    <div class="col-md-3">
-        <p>{{ user.first_name }} {{ user.last_name }}</p>
-
-
-    </div>
-
-    <a href="{% url 'account_logout' %}" class="btn btn-fill btn-wide">Logout</a>
-
-    <div class="col-md-9">
-
-        <a href="{% url 'brand_create' %}" class="btn btn-fill btn-lg">Add New Brand</a>
-        {% for brand in brands %}
-        <div class="card">
-            <a href="{% url 'brand_detail' pk=brand.id%}">{{ brand.name }}</a>
-            <p>{{ brand.info }}</p>
-            <div class="card-footer">
-
-                <a href="{% url 'brand_campaigns' pk=brand.id %}" class="btn btn-fill btn-sm">Brand Campaigns</a>
-                <a href="{% url 'campaign_create' pk=brand.id %}" class="btn btn-fill btn-sm">Create Campaign for
-                    Brand</a>
-                <a href="{% url 'brand_update' pk=brand.id%}" class="btn btn-outline btn-sm">edit this brand</a>
-                <a href="{% url 'brand_delete' pk=brand.id%}" class="btn btn-outline btn-sm">delete this brand</a>
+{% block main_content %}
+    <main>
+        {# Sidebar #}
+        <div class="sidebar-navigation">
+            <div class="sidebar-option active">
+                <div class="title-box">
+                    <i class="fa fa-balance-scale"></i>
+                    <span class="sidebar-title">Dashboard</span>
+                </div>
+            </div>
+            <div class="sidebar-option">
+                <div class="title-box">
+                    <i class="fa fa-id-badge"></i>
+                    <span class="sidebar-title">Influence</span>
+                </div>
+            </div>
+            <div class="sidebar-option">
+                <div class="title-box">
+                    <i class="fa fa-user-circle"></i>
+                    <span class="sidebar-title">Profiles</span>
+                </div>
+            </div>
+            <div class="sidebar-option">
+                <div class="title-box">
+                    <i class="fa fa-tags"></i>
+                    <span class="sidebar-title">Tags & posts</span>
+                </div>
+            </div>
+            <div class="sidebar-option">
+                <div class="title-box">
+                    <i class="fa fa-briefcase"></i>
+                    <span class="sidebar-title">Monetization</span>
+                </div>
+            </div>
+            <div class="sidebar-option">
+                <div class="title-box">
+                    <i class="fa fa-comments"></i>
+                    <span class="sidebar-title">Messaging</span>
+                </div>
+            </div>
+            <div class="sidebar-option">
+                <div class="title-box">
+                    <i class="fa fa-cogs"></i>
+                    <span class="sidebar-title">Settings</span>
+                </div>
             </div>
         </div>
-        {% endfor %}
-
-    </div>
-</div>
-    {% endblock content %}
+        {# Support content #}
+        <div class="support_content">
+            <div class="statistics-boxes">
+                <div class="statistic-box">Total followers</div>
+                <div class="statistic-box">Engagement ratio</div>
+                <div class="statistic-box">Total content watch hours</div>
+            </div>
+            <div class="profile">
+                <div class="name"><img src=""></div>
+                <div class="buttons">
+                    <button class="btn btn-fill btn-wide">Save profile</button>
+                    <button class="btn btn-fill btn-wide">Contact details</button>
+                    <button class="btn btn-fill btn-wide">More...</button>
+                </div>
+            </div>
+            <div class="social-statistics">
+                <div class="social-box">YouTube</div>
+                <div class="social-box">Instagram</div>
+                <div class="social-box">Facebook</div>
+            </div>
+            <div class="more-statistics"></div>
+        </div>
+    </main>
+{% endblock main_content %}
