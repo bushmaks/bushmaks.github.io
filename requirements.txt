@@ -20,7 +20,7 @@ django-photologue
 django-redis==4.9.0
 django-rest-framework==0.1.0
 django-star-ratings==0.6.1
-djangorestframework==3.8.2
+djangorestframework==3.9.1
 django-fontawesome
 flower==0.9.2
 idna==2.7
